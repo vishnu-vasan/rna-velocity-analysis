@@ -20,10 +20,12 @@ RNA-Velocity-Analysis/
 │── requirements.txt      # Required Python packages
 ```
 
-## 🚀 Overview
-This repository provides a step-by-step workflow for **RNA velocity analysis** using:
-1. **Velocyto (CLI tool)** → Generates **spliced** and **unspliced** counts.
-2. **scVelo (Python library)** → Processes data and visualizes RNA velocity.
+
+## 📊 Overview  
+This repository demonstrates a **bioinformatics workflow** for analyzing **RNA velocity** in single-cell transcriptomics using **Velocyto (CLI)** and **scVelo (Python)**. RNA velocity estimates the **direction and speed** of gene expression changes over time, providing insights into **cellular differentiation, transitions, and regulatory dynamics**.  
+
+RNA velocity is particularly useful in **developmental biology, cancer research, and disease modeling**, where understanding gene expression dynamics can help predict **cell fate decisions and regulatory mechanisms**.
+
 
 For a detailed explanation, check out my Medium blogs:
 - 📄 [RNA Velocity Analysis Part 1 — Generating Spliced and Unspliced Counts](https://medium.com/@vishnu.vasan.r.21/rna-velocity-analysis-part-1-generating-spliced-and-unspliced-counts-cf9a3839f898)
@@ -69,6 +71,26 @@ jupyter notebook notebooks/rna_velocity_analysis.ipynb
 | ![](figures/scvelo_velo_plot.png) | **RNA velocity stream plot** showing directional flow |
 | ![](figures/scvelo_phase_portrait.png) | **Phase portrait** of gene expression dynamics |
 | ![](figures/scvelo_proportions_.png) | Proportion of **spliced** and **unspliced** transcripts |
+
+## 🔍 Alternative Approaches
+While RNA velocity is a powerful method for studying transcriptomic dynamics, there are alternative approaches depending on the specific research question:
+
+1️⃣ Pseudotime Analysis (Monocle3)
+- Orders cells based on transcriptomic similarity instead of predicting future states.
+- Best suited for lineage inference and trajectory mapping without requiring spliced/unspliced counts.
+
+2️⃣ Dynamical Modeling in scVelo
+- The default approach in scVelo is stochastic velocity estimation, but dynamical modeling provides gene-specific regulation insights.
+
+3️⃣ Deep Learning-based Velocity Inference
+- Emerging methods explore neural network-based inference for more accurate velocity predictions.
+- Computationally expensive but could improve RNA velocity estimation in low-quality datasets.
+
+Choosing the right method depends on:
+
+- Data quality.
+- Research question.
+- Computational constraints.
 
 ## 📌 References
 - [Velocyto Documentation](https://velocyto.org/)
